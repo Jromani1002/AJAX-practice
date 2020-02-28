@@ -4,39 +4,70 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script>
-    function loadDoc(){
-      var req = new XMLHttpRequest();
-      req.onreadystatechange = function(){
-        if(this.onreadystatechange == 4 && this.status == 200) {
-          document.getElementById("name").innerHTML = this.resonseText;
-        }
-        req.open("GET","name.txt",true);
-        req.send();
-      }
-    }
-    </script>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
-    <title>Hello, world!</title>
+    <link href="https://fonts.googleapis.com/css?family=Caladea&display=swap" rel="stylesheet">
+    <title>Movies</title>
     <style media="screen">
-      body {font-family: 'Indie Flower', sans-serif;}
+      body {font-family: 'Caladea', sans-serif;}
     </style>
+    <script>
+      function loadDoc() {
+        var req = new XMLHttpRequest();
+        req.onreadystatechange = function(){
+          if(this.onreadystatechange == 4 && this.status == 200) {
+            document.getElementById("movie")inner.html = this.resonseText;
+          }
+          req.open("GET", "movies.txt",true);
+          req.send();
+        }
+      }
+    </script>
   </head>
   <body>
-    <div id="name">
     <div class="container-fluid">
-      <div class="jumbotron text-center">
-        <h1 class="display-4">Hello, world!</h1>
-        <h1 class="display-4">My Name is ????</h1>
-        <hr class="my-4">
-        <p>Click the button below to find out what my name is!</p>
-        <button type="button" class="btn btn-outline-primary btn-lg" onclick="loadDoc()">Reveal Name</button>
+      <div class="row text-center justify-content-around mt-5">
+        <div class="col-3">
+          <div class="card">
+            <div id="movie">
+            <div class="card-header">
+              <h2>Favorite Movie #1</h2>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Movie Title</h5>
+              <p class="card-text">Leading Actor</p>
+              <button type="button" class="btn btn-outline-warning" onclick="loadDoc()">Show</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card">
+            <div class="card-header">
+              <h2>Favorite Movie #2</h2>
+            </div>
+            <div id
+            <div class="card-body">
+              <h5 class="card-title">Movie Title</h5>
+              <p class="card-text">Leading Actor</p>
+              <button type="button" class="btn btn-outline-warning">Show</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card">
+            <div class="card-header">
+              <h2>Favorite Movie #3</h2>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Movie Title</h5>
+              <p class="card-text">Leading Actor</p>
+              <button type="button" class="btn btn-outline-warning">Show</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
