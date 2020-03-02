@@ -21,7 +21,7 @@
         <h1 class="display-4">My Name is ????</h1>
         <hr class="my-4">
         <p>Click the button below to find out what my name is!</p>
-        <button type="button" class="btn btn-outline-primary btn-lg" onclick="loadDoc()">Reveal Name</button>
+        <button type="button" class="btn btn-outline-primary btn-lg" onclick="revealName()">Reveal Name</button>
       </div>
     </div>
   </div>
@@ -29,14 +29,15 @@
   <script>
   function revealName() {
     var mRequest = new XMLHttpRequest();
-mRequest.onreadystatechange = function{
-    alert(mRequest.onreadystatechange);
-    alert(mRequest.readyState);
-    alert(mRequest.status);
-    }
+mRequest.onreadystatechange = function(){
+  console.log(mRequest.onreadystatechange);
+  console.log(mRequest.readyState);
+  console.log(mRequest.status);
+}
+
     mRequest.open("GET", "name.txt", true);
     mRequest.send();
-}
+  }
   </script>
 
     <!-- Optional JavaScript -->
