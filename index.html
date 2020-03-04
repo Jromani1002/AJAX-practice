@@ -14,11 +14,11 @@
     </style>
   </head>
   <body>
-    <div id="name">
+    <div>
     <div class="container-fluid">
       <div class="jumbotron text-center">
         <h1 class="display-4">Hello, world!</h1>
-        <h1 class="display-4">My Name is ????</h1>
+        <h1 class="display-4">My Name is <span id="name">????</span></h1>
         <hr class="my-4">
         <p>Click the button below to find out what my name is!</p>
         <button type="button" class="btn btn-outline-primary btn-lg" onclick="revealName()">Reveal Name</button>
@@ -31,7 +31,7 @@
     var mRequest = new XMLHttpRequest();
     mRequest.onreadystatechange = function(){
     if(mRequest.readyState == 4 && mRequest.status == 200){
-      document.getElementById("name").innerHTML = this.responseText; 
+      document.getElementById("name").innerHTML = this.responseText;
     }
   }
 
