@@ -29,11 +29,11 @@
   <script>
   function revealName() {
     var mRequest = new XMLHttpRequest();
-mRequest.onreadystatechange = function(){
-  console.log(mRequest.onreadystatechange);
-  console.log(mRequest.readyState);
-  console.log(mRequest.status);
-}
+    mRequest.onreadystatechange = function(){
+    if(mRequest.readyState == 4 && mRequest.status == 200){
+      document.getElementById("name").innerHTML = this.responseText; 
+    }
+  }
 
     mRequest.open("GET", "name.txt", true);
     mRequest.send();
