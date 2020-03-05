@@ -20,7 +20,7 @@
         <h1 class="display-4">Hello, world!</h1>
         <h1 class="display-4">My Name is <span id="name">????</span></h1>
         <hr class="my-4">
-        <p>Click the button below to find out what my name is!</p>
+        <p id="info">Click the button below to find out what my name is!</p>
         <button type="button" class="btn btn-outline-primary btn-lg" onclick="revealName()">Reveal Name</button>
       </div>
     </div>
@@ -31,11 +31,16 @@
     var mRequest = new XMLHttpRequest();
     mRequest.onreadystatechange = function(){
     if(mRequest.readyState == 4 && mRequest.status == 200){
-      document.getElementById("name").innerHTML = this.responseText;
+      var nameObj = this.responseText;
+      console.log(nameObj);
+      nameObj = JSON.parse(nameObj);
+      console.log(nameObj.lastName);
+      document.getElementById("name").innerHTML = nameObj.firstName + " " + nameObj.lastName;
+      document.getElementById("info").innerHTML = "I am" + nameObj.age + "And I am a " + nameObj.role;
     }
   }
 
-    mRequest.open("GET", "name.txt", true);
+    mRequest.open("GET", "name.json", true);
     mRequest.send();
   }
   </script>
